@@ -81,6 +81,7 @@ Rules:
         return {"success": True, "analysis": result}
 
     except Exception as e:
+        print(f"OpenAI error: {type(e).__name__}: {e}")
         # Fallback mock for when API is unavailable
         return {
             "success": True,
