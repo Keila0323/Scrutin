@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scrutin — Spot the Scam Before It Spots You</title>
+  <meta name="description" content="Scrutin uses GPT-4o to analyze job postings for scam signals, red flags, and legitimacy markers in seconds." />
   <link rel="stylesheet" href="/static/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,118 +12,134 @@
 </head>
 <body>
 
-  <!-- Background grid -->
-  <div class="bg-grid"></div>
-
   <!-- Nav -->
   <nav class="nav">
-    <div class="nav-inner">
-      <div class="nav-logo">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
-          <rect x="2" y="2" width="32" height="32" rx="8" stroke="url(#lg)" stroke-width="1.5"/>
-          <rect x="7" y="10" width="10" height="3" rx="1.5" stroke="url(#lg)" stroke-width="1.5"/>
-          <rect x="19" y="10" width="10" height="3" rx="1.5" stroke="url(#lg)" stroke-width="1.5"/>
-          <rect x="7" y="16.5" width="22" height="3" rx="1.5" stroke="url(#lg)" stroke-width="1.5"/>
-          <rect x="7" y="23" width="10" height="3" rx="1.5" stroke="url(#lg)" stroke-width="1.5"/>
-          <rect x="19" y="23" width="10" height="3" rx="1.5" stroke="url(#lg)" stroke-width="1.5"/>
-          <line x1="2" y1="18" x2="34" y2="18" stroke="#FF6B2B" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
-          <defs>
-            <linearGradient id="lg" x1="2" y1="2" x2="34" y2="34" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#EC4899"/>
-              <stop offset="100%" stop-color="#7C3AED"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <span class="logo-text">SCRUTIN</span>
-      </div>
-      <div class="nav-tag">AI Scam Detector</div>
+    <div class="nav-logo">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon" aria-label="Scrutin logo">
+        <rect x="2" y="2" width="32" height="32" rx="8" stroke="url(#lg)" stroke-width="1.5"/>
+        <rect x="7" y="10" width="10" height="3" rx="1.5" stroke="url(#lg)" stroke-width="1.5"/>
+        <rect x="19" y="10" width="10" height="3" rx="1.5" stroke="url(#lg)" stroke-width="1.5"/>
+        <rect x="7" y="16.5" width="22" height="3" rx="1.5" stroke="url(#lg)" stroke-width="1.5"/>
+        <rect x="7" y="23" width="10" height="3" rx="1.5" stroke="url(#lg)" stroke-width="1.5"/>
+        <rect x="19" y="23" width="10" height="3" rx="1.5" stroke="url(#lg)" stroke-width="1.5"/>
+        <line x1="2" y1="18" x2="34" y2="18" stroke="#FF6B2B" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+        <defs>
+          <linearGradient id="lg" x1="2" y1="2" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#EC4899"/>
+            <stop offset="100%" stop-color="#7C3AED"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="logo-text">SCRUTIN</span>
     </div>
+    <div class="nav-tag">AI Scam Detector</div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero — split layout -->
   <section class="hero">
-    <div class="hero-inner">
+
+    <!-- Left panel: headline -->
+    <div class="hero-left">
       <div class="hero-badge">
         <span class="badge-dot"></span>
         Powered by GPT-4o
       </div>
+
       <h1 class="hero-title">
-        Spot the scam<br/>
-        <span class="gradient-text">before it spots you.</span>
+        Spot the scam
+        <span class="hero-title-accent">before it spots you.</span>
       </h1>
+
       <p class="hero-sub">
         Paste any job posting and Scrutin's AI engine analyzes it for fraud signals,
         red flags, and legitimacy markers — in seconds.
       </p>
+
       <div class="hero-stats">
-        <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Detection accuracy</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">14+</span><span class="stat-label">Scam patterns detected</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">&lt;3s</span><span class="stat-label">Analysis time</span></div>
+        <div class="stat">
+          <span class="stat-num">14+</span>
+          <span class="stat-label">Scam patterns detected</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">&lt;3s</span>
+          <span class="stat-label">Analysis time</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">GPT-4o</span>
+          <span class="stat-label">AI engine</span>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Scanner -->
-  <section class="scanner-section">
-    <div class="scanner-card">
-      <div class="scanner-header">
-        <div class="scanner-title-row">
-          <svg class="scan-icon" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            <defs>
-              <linearGradient id="iconGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#EC4899"/>
-                <stop offset="100%" stop-color="#7C3AED"/>
-              </linearGradient>
-            </defs>
-          </svg>
-          <h2 class="scanner-title">Paste Job Posting</h2>
+    <!-- Right panel: scanner card -->
+    <div class="hero-right">
+      <div class="scanner-card">
+        <div class="scanner-header">
+          <div class="scanner-title-row">
+            <svg class="scan-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <defs>
+                <linearGradient id="iconGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#EC4899"/>
+                  <stop offset="100%" stop-color="#7C3AED"/>
+                </linearGradient>
+              </defs>
+              <circle cx="11" cy="11" r="8" stroke="url(#iconGrad)"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="url(#iconGrad)"/>
+            </svg>
+            <h2 class="scanner-title">Paste Job Posting</h2>
+          </div>
+          <p class="scanner-sub">Copy the full job description, including company name, salary, and requirements.</p>
         </div>
-        <p class="scanner-sub">Copy the full job description, including company name, salary, and requirements.</p>
-      </div>
 
-      <textarea
-        id="postingInput"
-        class="posting-input"
-        placeholder="Paste the full job posting here...
+        <textarea
+          id="postingInput"
+          class="posting-input"
+          placeholder="Paste the full job posting here...
 
 Example:
 Job Title: Data Entry Specialist
 Salary: $5,000/week working from home
-No experience required! 
+No experience required!
 Contact us at jobs.hiring2024@gmail.com
 We need your SSN and bank details to process your application..."
-        rows="10"
-      ></textarea>
+          rows="10"
+        ></textarea>
 
-      <div class="char-count" id="charCount">0 characters</div>
+        <div class="input-footer">
+          <span class="char-count" id="charCount">0 characters</span>
+          <span class="hint">Ctrl + Enter to scan</span>
+        </div>
 
-      <button class="analyze-btn" id="analyzeBtn" onclick="analyzePosting()">
-        <span id="btnText">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;display:inline-block;vertical-align:middle;margin-right:8px;">
-            <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
-          </svg>
-          Analyze This Posting
-        </span>
-        <span id="btnLoading" style="display:none;">
-          <span class="spinner"></span> Scanning...
-        </span>
-      </button>
+        <button class="analyze-btn" id="analyzeBtn" onclick="analyzePosting()">
+          <span id="btnText">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;display:inline-block;vertical-align:middle;margin-right:8px;">
+              <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
+            </svg>
+            Analyze This Posting
+          </span>
+          <span id="btnLoading" style="display:none;">
+            <span class="spinner"></span> Scanning...
+          </span>
+        </button>
+      </div>
     </div>
   </section>
 
   <!-- Results -->
   <section class="results-section" id="resultsSection" style="display:none;">
-    <div class="results-inner" id="resultsInner"></div>
+    <div class="results-inner" id="resultsInner">
+      <div class="results-header">
+        <h2>Analysis Report</h2>
+        <div class="results-divider"></div>
+      </div>
+    </div>
   </section>
 
   <!-- How it works -->
   <section class="how-section">
     <div class="how-inner">
-      <h2 class="how-title">How Scrutin Works</h2>
+      <p class="how-label">The Process</p>
+      <h2 class="how-title">Three steps.<br/>Total clarity.</h2>
       <div class="how-grid">
         <div class="how-card">
           <div class="how-num">01</div>
@@ -145,13 +162,9 @@ We need your SSN and bank details to process your application..."
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <span class="logo-text" style="font-size:1rem;">SCRUTIN</span>
-      </div>
-      <p class="footer-sub">Protecting job seekers with AI-powered scam detection.</p>
-      <p class="footer-copy">© 2026 Scrutin. Built with FastAPI + GPT-4o.</p>
-    </div>
+    <span class="logo-text" style="font-size:0.95rem;">SCRUTIN</span>
+    <p class="footer-sub">Protecting job seekers with AI-powered scam detection.</p>
+    <p class="footer-copy">© 2026 Scrutin. Built with FastAPI + GPT-4o.</p>
   </footer>
 
   <script src="/static/app.js"></script>

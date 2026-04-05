@@ -53,12 +53,9 @@ function renderResults(analysis) {
           <div class="verdict-badge ${cls}">${icon} ${analysis.verdict || "UNKNOWN"}</div>
           <p class="verdict-summary">${analysis.verdict_summary || ""}</p>
         </div>
-        <div class="score-meter-wrap">
-          <div class="score-circle ${cls}">
-            <span class="score-num">${score}</span>
-            <span class="score-label">/ 100</span>
-          </div>
-          <div class="score-meter-label">Scam Risk Score</div>
+        <div class="score-circle ${cls}">
+          <span class="score-num">${score}</span>
+          <span class="score-sub">/ 100</span>
         </div>
       </div>
     </div>
@@ -129,7 +126,12 @@ function renderResults(analysis) {
     `;
   }
 
-  resultsInner.innerHTML = html;
+  // Keep the results header, replace only the cards below it
+  const header = resultsInner.querySelector(".results-header");
+  resultsInner.innerHTML = "";
+  if (header) resultsInner.appendChild(header);
+  resultsInner.insertAdjacentHTML("beforeend", html);
+
   resultsSection.style.display = "flex";
   setTimeout(() => resultsSection.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
 }
